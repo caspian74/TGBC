@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Family Barber Club · Barbería en Tijuana</title>
+<meta name="description" content="Barbería en Tijuana: cortes, barba y afeitado. Reserva tu cita por WhatsApp en The Family Barber Club.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Family Barber Club · Barbería en Tijuana">
+<meta property="og:description" content="Cortes, barba y afeitado en Tijuana. Reserva tu cita por WhatsApp.">
+<meta property="og:locale" content="es_MX">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark;
+  --black:#000;
+  --gold:#d4a94f;
+  --gold-soft:#8a6f35;
+  --bone:#f1e8d4;
+  --muted:#a89f8a;
+  --line:#2b261b;
+  --display:"Unbounded","Arial Black","Helvetica Neue",sans-serif;
+  --body:"DM Sans","Helvetica Neue",Arial,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--black);color:var(--bone);font:400 18px/1.6 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1}
+p{margin:0 0 16px;max-width:52ch}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--black);font:700 17px var(--body);text-decoration:none;padding:16px 28px;border:2px solid var(--gold);border-radius:999px;cursor:pointer}
+.btn:hover{background:var(--bone);border-color:var(--bone)}
+.btn.ghost{background:transparent;color:var(--bone);border-color:var(--gold-soft)}
+.btn.ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:var(--black);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 15px var(--display);color:var(--gold)}
+.logo svg{width:18px;height:18px;fill:var(--gold)}
+nav ul{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0}
+nav ul a{text-decoration:none;color:var(--muted);font-size:16px}
+nav ul a:hover{color:var(--gold)}
+nav .btn{padding:9px 20px;font-size:15px;color:var(--black)}
+@media(max-width:700px){nav ul li:not(:last-child){display:none}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:64px 0 0}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:end}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:32px}}
+.hero h1{font-size:clamp(38px,6.2vw,76px);font-weight:800;letter-spacing:-.02em;color:var(--bone)}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .lead{font-size:clamp(18px,2.2vw,21px);color:var(--muted);margin:26px 0 30px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.card{background:var(--gold);color:var(--black);border-radius:22px;padding:28px 26px;align-self:center}
+.card h3{font-size:19px;font-weight:800;margin-bottom:18px}
+.card dl{margin:0;display:grid;gap:14px}
+.card dt{font-weight:700;font-size:15px}
+.card dd{margin:0;font-size:17px}
+.card a{font-weight:700}
+.big{font:800 clamp(90px,24vw,330px)/.8 var(--display);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:2px var(--gold-soft);white-space:nowrap;margin:56px 0 0 -2vw;user-select:none;pointer-events:none}
+
+/* services */
+section{padding:96px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+h2{font-size:clamp(30px,5vw,52px);font-weight:800;letter-spacing:-.02em}
+.svc{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.svc li{display:grid;grid-template-columns:1fr auto;gap:8px 24px;align-items:center;padding:26px 14px;border-bottom:1px solid var(--line);transition:background .2s,color .2s}
+.svc li:hover{background:var(--gold);color:var(--black)}
+.svc li:hover .d{color:var(--black)}
+.svc .n{font:500 clamp(20px,3vw,30px) var(--display)}
+.svc .d{grid-column:1;color:var(--muted);font-size:16px}
+.svc .p{grid-row:1/3;grid-column:2;font:800 clamp(22px,3vw,32px) var(--display)}
+.note{color:var(--muted);font-size:15px;margin-top:18px}
+
+/* booking + location */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;border-top:1px solid var(--line)}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:48px}}
+fieldset{border:0;margin:0 0 22px;padding:0}
+legend{font-weight:700;margin-bottom:10px;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips label{border:1.5px solid var(--gold-soft);border-radius:999px;padding:10px 18px;font-size:16px;cursor:pointer}
+.chips input:checked+label{background:var(--gold);color:var(--black);border-color:var(--gold);font-weight:700}
+.chips input:focus-visible+label{outline:3px solid var(--bone);outline-offset:2px}
+.name{width:100%;max-width:380px;font:inherit;color:var(--bone);background:transparent;border:0;border-bottom:2px solid var(--gold-soft);padding:12px 0;margin-bottom:26px}
+.name:focus{border-color:var(--gold);outline:none}
+.hours{list-style:none;margin:0 0 28px;padding:0;max-width:420px}
+.hours li{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line)}
+.hours span:last-child{color:var(--muted)}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:30px 0 40px;color:var(--muted);font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a{color:var(--gold)}
+
+/* mobile bar */
+.bar{display:none}
+@media(max-width:700px){
+  .bar{display:block;position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:var(--black);border-top:1px solid var(--line)}
+  .bar .btn{width:100%;justify-content:center}
+  footer{padding-bottom:96px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.svc li{transition:none}}
+
+/* acabado estético */
+nav{background:rgba(0,0,0,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.hero::before{content:"";position:absolute;top:-25%;right:-15%;width:75vw;height:75vw;background:radial-gradient(closest-side,rgba(212,169,79,.20),transparent);pointer-events:none}
+.hero .wrap{position:relative}
+.card{box-shadow:0 30px 80px -30px rgba(212,169,79,.55)}
+.big{background:linear-gradient(180deg,rgba(212,169,79,.5),rgba(212,169,79,0) 85%);-webkit-background-clip:text;background-clip:text;-webkit-text-stroke:2px rgba(212,169,79,.55)}
+.btn{transition:background .2s,border-color .2s,color .2s,transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.svc li{transition:background .25s,color .25s,padding-left .25s}
+.svc li:hover{padding-left:28px}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero h1,.hero .lead,.hero .actions,.card{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero .lead{animation-delay:.12s}.hero .actions{animation-delay:.24s}.card{animation-delay:.36s}
+@media(prefers-reduced-motion:reduce){.hero h1,.hero .lead,.hero .actions,.card{animation:none}.btn:hover,.svc li:hover{transform:none;padding-left:14px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1l3.1 7.4 8 .6-6.1 5.2 1.9 7.8L12 17.8 5.1 22l1.9-7.8L.9 9l8-.6z"/></svg>The Family</a>
+    <ul>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#reservar">Horario</a></li>
+      <li><a class="btn" href="#reservar">Reservar</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1>Tu barbería de confianza en <em>Tijuana</em></h1>
+      <p class="lead">Cortes, barba y afeitado con navaja en The Family Barber Club. Llegas, te sientas y sales listo.</p>
+      <div class="actions">
+        <a class="btn" href="#reservar">Reserva tu cita</a>
+        <a class="btn ghost" href="#servicios">Ver precios</a>
+      </div>
+    </div>
+    <aside class="card">
+      <h3>The Family Barber Club</h3>
+      <dl>
+        <div><dt>Ubicación</dt><dd>Tijuana, B.C.<br><a href="https://www.google.com/maps/search/?api=1&query=The+Family+Barber+Club+Tijuana" rel="noopener">Abrir en Google Maps</a></dd></div>
+        <div><dt>Horario</dt><dd>Lun a vie 10:00 – 20:00<br>Sáb 10:00 – 18:00</dd></div>
+        <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/thefamily_barber_club" rel="noopener">@thefamily_barber_club</a></dd></div>
+      </dl>
+    </aside>
+  </div>
+  <div class="big" aria-hidden="true">FAMILY</div>
+</header>
+
+<section id="servicios">
+  <div class="wrap">
+    <div class="head">
+      <h2>Servicios y precios</h2>
+      <p style="margin:0;color:var(--muted)">Todo incluye lavado y peinado.</p>
+    </div>
+    <ul class="svc">
+      <li><span class="n">Corte clásico</span><span class="d">Tijera o máquina</span><span class="p">$200</span></li>
+      <li><span class="n">Corte y barba</span><span class="d">El combo con toalla caliente</span><span class="p">$320</span></li>
+      <li><span class="n">Perfilado de barba</span><span class="d">Líneas definidas y aceite</span><span class="p">$150</span></li>
+      <li><span class="n">Afeitado con navaja</span><span class="d">Toalla caliente y acabado suave</span><span class="p">$180</span></li>
+      <li><span class="n">Corte infantil</span><span class="d">Para los más chicos</span><span class="p">$150</span></li>
+    </ul>
+    <p class="note">Precios de ejemplo. Se ajustan a los reales del negocio.</p>
+  </div>
+</section>
+
+<section id="reservar" style="padding-top:0">
+  <div class="wrap split" style="padding-top:96px">
+    <form id="f">
+      <h2 style="margin-bottom:30px">Reserva por WhatsApp</h2>
+      <fieldset>
+        <legend>Servicio</legend>
+        <div class="chips">
+          <input type="radio" name="s" id="s1" value="Corte clásico" checked><label for="s1">Corte clásico</label>
+          <input type="radio" name="s" id="s2" value="Corte y barba"><label for="s2">Corte y barba</label>
+          <input type="radio" name="s" id="s3" value="Perfilado de barba"><label for="s3">Barba</label>
+          <input type="radio" name="s" id="s4" value="Afeitado con navaja"><label for="s4">Afeitado</label>
+          <input type="radio" name="s" id="s5" value="Corte infantil"><label for="s5">Infantil</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Día</legend>
+        <div class="chips">
+          <input type="radio" name="d" id="d1" value="lunes"><label for="d1">Lun</label>
+          <input type="radio" name="d" id="d2" value="martes"><label for="d2">Mar</label>
+          <input type="radio" name="d" id="d3" value="miércoles"><label for="d3">Mié</label>
+          <input type="radio" name="d" id="d4" value="jueves"><label for="d4">Jue</label>
+          <input type="radio" name="d" id="d5" value="viernes" checked><label for="d5">Vie</label>
+          <input type="radio" name="d" id="d6" value="sábado"><label for="d6">Sáb</label>
+        </div>
+      </fieldset>
+      <input class="name" id="nom" type="text" autocomplete="given-name" placeholder="Tu nombre" aria-label="Tu nombre">
+      <button class="btn" type="submit">Enviar por WhatsApp</button>
+    </form>
+
+    <div>
+      <h2 style="margin-bottom:30px">Horario y ubicación</h2>
+      <ul class="hours">
+        <li><span>Lunes a viernes</span><span>10:00 – 20:00</span></li>
+        <li><span>Sábado</span><span>10:00 – 18:00</span></li>
+        <li><span>Domingo</span><span>Cerrado</span></li>
+      </ul>
+      <p>The Family Barber Club<br>Tijuana, Baja California<br><span style="color:var(--muted)">Dirección completa por confirmar.</span></p>
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=The+Family+Barber+Club+Tijuana" rel="noopener">Cómo llegar</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© The Family Barber Club · Tijuana, B.C.</span>
+    <a href="https://www.instagram.com/thefamily_barber_club" rel="noopener">@thefamily_barber_club</a>
+  </div>
+</footer>
+
+<div class="bar"><a class="btn" href="#reservar">Reserva tu cita</a></div>
+
+<script>
+document.getElementById('f').addEventListener('submit',function(e){
+  e.preventDefault();
+  var n=document.getElementById('nom').value.trim();
+  var s=document.querySelector('input[name=s]:checked').value;
+  var d=document.querySelector('input[name=d]:checked').value;
+  var t='Hola, soy '+(n||'un cliente')+'. Quiero reservar: '+s+' el '+d+'. ¿Qué horarios tienen disponibles?';
+  window.open('https://wa.me/526640000000?text='+encodeURIComponent(t),'_blank','noopener');
+});
+</script>
+</body>
+</html>
